@@ -19,3 +19,16 @@ enter commit message: _
 ```
 
 After writing a message and hitting ENTER, the changes are pushed to the remote repo.
+Entering an empty commit message results in the program doing `git reset` and exiting.
+
+## How to modify/run locally:
+
+```bash
+pip install e .
+```
+
+In your project appear:
+`build/`
+`git_quick.egg-info/`
+
+Now you are ready to run it locally with `a`
