@@ -9,11 +9,18 @@ def run(cmd: list[str]) -> None: # list makes the whole process safer
 
 
 def main() -> None:
+    status = subprocess.run(["git", "status", "--porcelain"], capture_output = True, text = True) # --porcelain tells Git to make the output machine-readable, capture_output saves it in status.stdout (standard output), text saves it as string, not bytes
+
+    if not status.stdout:
+        print("no changes to stage")
+        sys.exit(0)
+
     run(["git", "add", "."])
 
     message = input("enter commit message: ").strip()
     if not message:
-        print("Aborted, no commit message")
+        run(["git", "reset"])
+        print("Aborted, no commit message, unstaged changes")
         sys.exit(1)
 
     run(["git", "commit", "-m", message])
