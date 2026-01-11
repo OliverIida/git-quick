@@ -18,4 +18,4 @@ It automatically stages all changes in your current working directory and prompt
 enter commit message: _
 ```
 
-After writing a message and hitting ENTER, the changes are psuhed to the remote repo.
+After writing a message and hitting ENTER, the changes are pushed to the remote repo.
